@@ -1,0 +1,21 @@
+{% extends "sidebar.html" %}
+{% block body %}
+        <div class="page-title">
+                <h2>Add new comment</h2>
+        </div>
+    <form action="/newcom/sendcom" method="POST">
+    	<table class="inp">
+            <tr>
+            <td>
+		Dear user {{ usr }},
+		<label for="comment">please type your comment below: </label><br/>
+		<textarea name="comment"></textarea><br/>
+		<button type="submit">Send</button>
+            </td>
+            </tr>
+        </table>
+    </form>
+        <div>
+                <a href="/comment">Back to comment</a>
+        </div>
+{% endblock %}

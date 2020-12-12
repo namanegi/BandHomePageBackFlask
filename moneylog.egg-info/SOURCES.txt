@@ -1,0 +1,7 @@
+setup.py
+moneylog/__init__.py
+moneylog.egg-info/PKG-INFO
+moneylog.egg-info/SOURCES.txt
+moneylog.egg-info/dependency_links.txt
+moneylog.egg-info/requires.txt
+moneylog.egg-info/top_level.txt

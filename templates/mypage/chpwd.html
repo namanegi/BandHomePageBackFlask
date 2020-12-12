@@ -1,0 +1,28 @@
+{% extends "sidebar.html" %}
+{% block body %}
+
+<form action="/mypage/newpwd" method="POST">
+<table class="inp">
+<tr>
+	<td><label for="oldpwd">Old Password: </label></td>
+	<td><input type="password" name="oldpwd"></td>
+</tr>
+
+<tr>
+	<td><label for="oldpwdr">Repeat old Password: </label></td>
+	<td><input type="password" name="oldpwdr"></td>
+</tr>
+
+<tr>
+	<td><label for="newpwd">New Password: </label></td>
+	<td><input type="password" name="newpwd"></td>
+</tr>
+
+<tr>
+	<td></td>
+	<td><button type="submit">Send</button></td>
+</tr>
+</table>
+</form>
+
+{% endblock %}

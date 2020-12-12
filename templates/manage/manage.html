@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/static/main.css">
+	<link rel="icon" href="/static/favicon.ico">
+	<title>Site Manager</title>
+</head>
+<body>
+This is manage test page.<br/>
+You are now login as admin with username{{ usr }} and uid {{ uid }}.<br/>
+<a href="/manage">Manage comments</a><br/>
+<a href="/manage/video">Manage videos</a><br/>
+{% block body %}
+{% endblock %}
+<div>
+<a href="/">Back to top</a><br/>
+<a href="/logout">Log out</a>
+</div>
+</body>
+</html>

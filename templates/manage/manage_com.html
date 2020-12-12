@@ -1,0 +1,20 @@
+{% extends "manage/manage.html" %}
+{% block body %}
+        <table class="list">
+                <tr>
+                        <th width="5%">c_id</th>
+                        <th width="60%">Comment</th>
+                        <th>User</th>
+                        <th width="20%">Date</th>
+                </tr>
+                {% for data in datas %}
+                <tr>
+                        <td><a href="/manage/delcom/{{ data[0] }}">del</a></td>
+                        <td>{{ data[2] }}</td>
+                        <td>{{ data[1] }}</td>
+                        <td>{{ data[3] }}</td>
+                </tr>
+                {% endfor %}
+        </table>
+
+{% endblock %}

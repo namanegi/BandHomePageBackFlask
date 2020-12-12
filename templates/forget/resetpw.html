@@ -1,0 +1,25 @@
+{% extends "sidebar.html" %}
+{% block body %}
+	<div class="page-title">
+		<h2>Answer your security question</h2>
+	</div>
+		<table class="inp">
+			<tr>
+				<td>
+					<label for="username">Username: </label>
+				</td>
+				<td>
+					{{ usr }}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="new_pwd">New Password: </label>
+				</td>
+				<td>
+					{{ pwd }}
+				</td>
+			</tr>
+		</table>
+	<a href="/login">Back to login page</a>
+{% endblock %}

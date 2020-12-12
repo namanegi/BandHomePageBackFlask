@@ -1,0 +1,48 @@
+{% extends "manage/manage.html" %}
+{% block body %}
+        <table class="list">
+                <tr>
+                        <th width="5%">v_id</th>
+                        <th width="60%">Title</th>
+                        <th>User</th>
+                        <th width="20%">Date</th>
+                </tr>
+                {% for data in datas %}
+                <tr>
+                        <td><a href="/manage/delvid/{{ data[0] }}">del</a></td>
+                        <td>{{ data[1] }}</td>
+                        <td>{{ data[5] }}</td>
+                        <td>{{ data[6] }}</td>
+                </tr>
+                {% endfor %}
+        </table>
+<form action="/manage/newvid" method="POST">
+    	<table class="inp">
+            <tr>
+                <td><label for="title">Title: </label></td>
+                <td><input type="text" name="title"></td>
+            </tr>
+            <tr>
+                <td><label for="link">Link: </label></td>
+                <td><input type="text" name="link"></td>
+            </tr>
+            <tr>
+                <td><label for="ifr">Code: </label></td>
+                <td><textarea name="ifr"></textarea></td>
+            </tr>
+    		<tr>
+    		<td>
+            <label for="comment">Comment: </label><br/>
+            </td>
+            <td>
+            <textarea name="comment"></textarea><br/>
+            </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Upload</button></td>
+            </tr>
+        </table>
+</form>
+
+{% endblock %}

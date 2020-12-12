@@ -1,0 +1,40 @@
+{% extends "sidebar.html" %}
+{% block body %}
+	<div class="page-title">
+		<h2>Answer your security question</h2>
+	</div>
+	<form action="/forget/repwd2" method="POST">
+		<table class="inp">
+			<tr>
+				<td>
+					<label for="username">Username: </label>
+				</td>
+				<td>
+					<label>{{ usr }}</label><input type="hidden" name="username" value="{{ usr }}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="question">Question: </label>
+				</td>
+				<td>
+					{{ question }}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="ans">Answer: </label>
+				</td>
+				<td>
+					<input type="text" name="ans">
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="submit">Send</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+{% endblock %}

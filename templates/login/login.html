@@ -1,0 +1,39 @@
+{% extends "sidebar.html" %}
+{% block body %}
+	<div class="page-title">
+            <h2>Login</h2>
+	</div>
+        {% if message != '' %}
+        {{ message }} <br/>
+        {% endif %}
+	<form action="/login/usrpwd" method="POST">
+		<table class="inp">
+			<tr>
+				<td>
+					<label for="username">Username: </label>
+				</td>
+				<td>
+					<input type="text" name="username">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="passwd">Password: </label>
+				</td>
+				<td>
+					<input type="password" name="passwd">
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="submit">Login</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<div>
+		<a href="/forget">Forget password? Click HERE!</a><br/>
+		<a href="/signup">Signup for new account? Click HERE!</a><br/>
+	</div>
+{% endblock %}

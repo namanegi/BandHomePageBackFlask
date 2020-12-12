@@ -1,0 +1,25 @@
+{% extends "sidebar.html" %}
+{% block body %}
+        <div class="page-title">
+                <h2>Mypage</h2>
+        </div>
+        <table class="list">
+                <tr>
+                        <th width="70%">Comment</th>
+                        <th>User</th>
+                        <th width="20%">Date</th>
+                </tr>
+                {% for data in datas %}
+                <tr>
+                        <td>{{ data[2] }}</td>
+                        <td>{{ data[1] }}</td>
+                        <td>{{ data[3] }}</td>
+                </tr>
+                {% endfor %}
+        </table>
+	<div class="subtext">
+		<a href="/">Back to top</a><br/>
+		<a href="/mypage/chpwd">Change password</a><br/>
+		<a href="/logout">Log out</a>
+	</div>
+{% endblock %}

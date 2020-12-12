@@ -1,0 +1,49 @@
+{% extends "sidebar.html" %}
+{% block body %}
+<div id="p32" class="subtext">
+  <h1>2020.10.13 The homepage is renewed!!</h1>
+  <p>Management system was setted and comment system was provided.</p>
+  <p>Please feel free to signup an account and leave your comment here!</p>
+</div>
+
+<div id="p31" class="subtext">
+  <h1>2019.06.10 鸡排饭乐队主页上线</h1>
+  <p>经过毛球一周的努力和鸡排的冷眼旁观，鸡排饭的乐队主页终于完成了设计和初步架设并且顺利上线。</p>
+</div>
+<div id="BBS" class="subtext" style="text-align:center;">
+<h1>↓↓↓BBS Area Below↓↓↓</h1>
+</div>
+
+		{% for data in datas %}
+		<div id="c{{ data[0] }}" class="subtext">
+			<h5>{{ data[1] }}    
+			{{ data[3] }}</h5>
+			<p>{{ data[2] }} </p>
+		</div>
+		{% endfor %}
+	<div class="subtext">
+		{% if p_num > 1%}
+		{% for i in range(1, p_num+1) %}
+		<a href="/comment/id={{ i }}">{{ i }}</a>
+		{% endfor %}
+		{% endif %}
+	</div>
+	
+	<div class="subtext">
+		{% if login_status == 2 %}
+		<a href="/manage">Manage this site</a><br/>
+		{% endif %}
+		{% if login_status >= 1 %}
+		<a href="/mypage">My page</a><br/>
+		<a href="/newcom">Add new comment</a><br/>
+		<a href="/logout">Log out</a>
+		{% elif login_status == 0 %}
+		<a href="/login">Login</a>
+		{% endif %}
+	</div>
+<script>
+var jside1=document.getElementById("side3");
+var posi = 3;
+jside1.src = "/static/img/side3on.png";
+</script>
+{% endblock %}

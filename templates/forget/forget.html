@@ -1,0 +1,36 @@
+{% extends "sidebar.html" %}
+{% block body %}
+	<div class="page-title">
+		<h2>Forget your password?</h2>
+	</div>
+	{% if not message == '' %}
+	{{ message }}
+	{% endif %}
+	<form action="/forget/repwd1" method="POST">
+		<table class="inp">
+			<tr>
+				<td>
+					<label for="username">Username: </label>
+				</td>
+				<td>
+					<input type="text" name="username">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="email">Email: </label>
+				</td>
+				<td>
+					<input type="text" name="email">
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="submit">Send</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<a href="/login">Back to login</a>
+{% endblock %}

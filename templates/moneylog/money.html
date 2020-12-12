@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/static/main.css">
+	<title>Money Management System</title>
+</head>
+
+<body>
+	<h2>Remain Money:</h2>
+	<h1>
+		{{rides[0]['Remain']}}
+	</h1>
+
+	<form action="/send" method="post">
+		<table class="inp">
+			<caption>Input New Log</caption>
+			<tr>
+				<td>
+					<label for="datatype">Type</label><br>
+					<input type="radio" id="income" name="datatype" value="income" checked="checked">
+					<label for="income">Income</label><br>
+					<input type="radio" id="outcome" name="datatype" value="outcome">
+					<label for="outcome">Outcome</label>
+				</td>
+				<td>
+					<label for="money">Money</label><br>
+					<input type="number" id="money" name="money"/>
+				</td>
+				<td>
+					<label for="time">Time</label><br>
+					<input type="datetime-local" name="time"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<label for="comment">Comment</label><br>
+					<textarea id="comment" name="comment"></textarea>
+				</td>
+			</tr>
+		</table>
+		<button type="Reset">Reset</button>
+	
+		<button type="submit">Add</button>
+	</form>
+	<form action="/delete">
+	<button type="submit">Delete</button>
+	</form>
+	<h3>Log</h3>
+	<table class="list">
+		<tr>
+			<th>Time</th>
+			<th>Change</th>
+			<th>Remain</th>
+			<th>Comment</th>
+		</tr>
+		{% for ride in rides %}
+		<tr>
+			<td>{{ ride['time'] }}</td>
+			<td>{{ ride['money'] }}</td>
+			<td>{{ ride['Remain'] }}</td>
+			<td>{{ ride['comment'] }}</td>
+		</tr>
+		{% endfor %}
+
+	</table>	
+</body>
+
+</html>

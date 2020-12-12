@@ -1,0 +1,39 @@
+{% extends "sidebar.html" %}
+{% block body %}
+
+        <div class="subtext">
+                {% if p_num > 1%}
+                {% for i in range(1, p_num+1) %}
+                <a href="/videolist/id={{ i }}">{{ i }}</a>
+                {% endfor %}
+                {% endif %}
+        </div>
+{% for data in datas %}
+
+<div class="subtext">
+<h1>{{ data[1] }}</h1>
+<div id="work{{ data[0] }}" class="subdiv">
+{{ data[3] | safe }}
+</div>
+<p>{{ data[4] }}</p>
+{% if data[2] is not none and data[2] != '' %}
+<p><a href="{{ data[2] }}" target="_blank">{{ data[2] }}</a></p>
+{% endif %}
+</div>
+
+{% endfor %}
+
+        <div class="subtext">
+                {% if p_num > 1%}
+                {% for i in range(1, p_num+1) %}
+                <a href="/videolist/id={{ i }}">{{ i }}</a>
+                {% endfor %}
+                {% endif %}
+        </div>
+<script>
+var jside1=document.getElementById("side4");
+var posi = 4;
+jside1.src = "/static/img/side4on.png";
+</script>
+
+{% endblock %}
